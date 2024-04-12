@@ -1,26 +1,32 @@
 #include<stdio.h>
+#include<stdlib.h>
+#define MAX 4
+int a[MAX];
+int top=-1;
+void push(int d);
+void push(int d)
+{
+if(top==MAX-1)
+{
+printf("stack overflow");
+exit(1);
+}
+top++;
+a[top]=d;
+}
+int display();
+int display()
+{
+int i;
+for(i=top;i>=0;i--)
+{
+printf("%d",a[i]);
+}
+}
 int main()
 {
-int a[100],search,i,n,pos=-1;
-printf("enter the size of array");
-scanf("%d",&n);
-printf("enter elements");
-for(i=0;i<n;i++)
-scanf("%d",&a[i]);
-printf("enter the number to search");
-scanf("%d",&search);
-for(i=0;i<n;i++)
-
-if(a[i]==search)
-{
-printf("%d is present at location %d",search,i);
-break;
-}
-{
-if(pos>=0)
-printf("key is found=%d",pos);
-else
-printf("key is not f0und");
-}
+push(10);
+push(20);
+display();
 return 0;
 }
