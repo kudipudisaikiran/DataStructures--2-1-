@@ -1,0 +1,43 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyWidgetsApp());
+
+class MyWidgetsApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text("Explore Flutter Widgets")),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Hello Sweety 💛",
+                style: TextStyle(fontSize: 24, color: Colors.purple),
+              ),
+              SizedBox(height: 20),
+              Image.network(
+                'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg',
+                width: 150,
+              ),
+              SizedBox(height: 20),
+              Container(
+                width: 150,
+                height: 100,
+                color: Colors.lightBlue,
+                child: Center(
+                  child: Text(
+                    "This is a Container",
+                    style: TextStyle(color: Colors.white),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
